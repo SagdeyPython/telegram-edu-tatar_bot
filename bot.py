@@ -1,4 +1,3 @@
-Мирон Янович, [24.11.19 20:14]
 # encoding: utf - 8
 import os
 import pickle
@@ -135,8 +134,6 @@ subject = {
     'Химия': 'himiya',
     'Русский': 'russkii_yazik'
 }
-
-Мирон Янович, [24.11.19 20:14]
 bot = telegram.Bot(token=token)
 updater = Updater(token=token, use_context=True)
 dispatcher = updater.dispatcher
@@ -209,9 +206,7 @@ def found_ex_in_dz(ex_for_gdz):
                                                int(ex_for_gdz[position + 4]) + 1):
                                     exp_more.append(i)
                             elif ex_for_gdz[position + 4] == '-':
-
-Мирон Янович, [24.11.19 20:14]
-exp += ex_for_gdz[position + 3]
+                                exp += ex_for_gdz[position + 3]
                                 for i in range(int(exp),
                                                int(ex_for_gdz[position + 5] + ex_for_gdz[
                                                    position + 6]) + 1):
@@ -273,9 +268,7 @@ exp += ex_for_gdz[position + 3]
                                         if ex_for_gdz[position + 6].isdigit():
                                             exp += ex_for_gdz[position + 6]
             else:
-
-Мирон Янович, [24.11.19 20:14]
-if ex_for_gdz[position + 1].isdigit():
+                if ex_for_gdz[position + 1].isdigit():
                     if ex_for_gdz[position + 1].isdigit():
                         exp += ex_for_gdz[position + 1]
                         if ex_for_gdz[position + 2] == '-':
@@ -337,9 +330,7 @@ if ex_for_gdz[position + 1].isdigit():
                                     exp += ex_for_gdz[position + 4]
                                     if len(ex_for_gdz) - 1 > position + 6:
                                         if ex_for_gdz[position + 5].isdigit():
-
-Мирон Янович, [24.11.19 20:14]
-exp += ex_for_gdz[position + 5]
+                                            exp += ex_for_gdz[position + 5]
                     else:
                         if ex_for_gdz[position + 2].isdigit():
                             exp += ex_for_gdz[position + 2]
@@ -401,9 +392,7 @@ exp += ex_for_gdz[position + 5]
                                         exp += ex_for_gdz[position + 4]
                 else:
                     if ex_for_gdz[position + 3] == ' ':
-
-Мирон Янович, [24.11.19 20:14]
-if ex_for_gdz[position + 4].isdigit():
+                        if ex_for_gdz[position + 4].isdigit():
                             exp += ex_for_gdz[position + 4]
                             if len(ex_for_gdz) - 1 > position + 5:
                                 if ex_for_gdz[position + 5].isdigit():
@@ -465,10 +454,7 @@ if ex_for_gdz[position + 4].isdigit():
                                     exp += ex_for_gdz[position + 5]
                                     if ex_for_gdz[position + 6] == '-':
                                         for i in range(int(exp), int(
-                                                ex_for_gdz[position + 7] + ex_for_gdz[position + 8] +
-
-Мирон Янович, [24.11.19 20:14]
-ex_for_gdz[
+                                                ex_for_gdz[position + 7] + ex_for_gdz[position + 8] + ex_for_gdz[
                                                     position + 9]) + 1):
                                             exp_more.append(i)
                             elif len(ex_for_gdz) - 1 > position + 5:
@@ -529,9 +515,7 @@ ex_for_gdz[
                                             ex_for_gdz[position + 6] + ex_for_gdz[position + 7] +
                                             ex_for_gdz[
                                                 position + 8]) + 1):
-
-Мирон Янович, [24.11.19 20:14]
-exp_more.append(i)
+                                                    exp_more.append(i)
                         elif len(ex_for_gdz) - 1 > position + 5:
                             if ex_for_gdz[position + 3].isdigit():
                                 exp += ex_for_gdz[position + 3]
@@ -595,9 +579,7 @@ exp_more.append(i)
                                 for i in range(int(exp),
                                                int(ex_for_gdz[position + 6] + ex_for_gdz[
                                                    position + 7]) + 1):
-
-Мирон Янович, [24.11.19 20:14]
-exp_more.append(i)
+                                                        exp_more.append(i)
                             elif ex_for_gdz[position + 4].isdigit():
                                 exp += ex_for_gdz[position + 4]
                                 if ex_for_gdz[position + 5].isdigit():
@@ -657,9 +639,7 @@ exp_more.append(i)
                                            int(ex_for_gdz[position + 5] + ex_for_gdz[
                                                position + 6]) + 1):
                                 exp_more.append(i)
-
-Мирон Янович, [24.11.19 20:14]
-elif ex_for_gdz[position + 3].isdigit():
+                        elif ex_for_gdz[position + 3].isdigit():
                             exp += ex_for_gdz[position + 3]
                             if ex_for_gdz[position + 4].isdigit():
                                 exp += ex_for_gdz[position + 4]
@@ -724,7 +704,7 @@ def send_everyone(text, silent=False):
         bot.send_message(chat_id=chat_id, text=text, disable_web_page_preview=True,
                          disable_notification=silent)
 
-Мирон Янович, [24.11.19 20:14]
+
 def get_homework(login, password):
     driver = get_chromedriver(use_proxy=True)
     global learning, class_people, domashka, ex_table
@@ -809,7 +789,7 @@ def default_test(update, custom_keyboard, text):
                      text=text,
                      reply_markup=reply_markup)
 
-Мирон Янович, [24.11.19 20:14]
+
 @catch_error
 def textbook_mode(update, context):
     text = update.message.text
@@ -862,7 +842,7 @@ def textbook_mode(update, context):
             pickle.dump(data, file)
         context.bot.send_message(chat_id=update.message.chat_id, text='Успешно введено')
 
-Мирон Янович, [24.11.19 20:14]
+
 @catch_error
 def text(update, context):
     text = update.message.text
@@ -905,9 +885,7 @@ def text(update, context):
         else:
             context.bot.send_message(chat_id=update.message.chat_id,
                                      text="Для начала получите домашку \"Домашка на завтра\"")
-
-Мирон Янович, [24.11.19 20:14]
-elif 'Алгебра' in text:
+    elif 'Алгебра' in text:
         context.bot.send_message(chat_id=update.message.chat_id,
                                       text='Напишите свой учебник, или выберите из этих - ')
         custom_keyboard = [[i] for i in author['Алгебра'][class_people].keys()]
